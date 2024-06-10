@@ -87,7 +87,7 @@ products.forEach((product) => {
     <div class="card-body">
       <h5 class="card-title">${product.name}</h5>
       <p class="card-text">${product.description}</p>
-      <a href="#" class="btn btn-primary ">Add to Chart</a>
+      <a href="#" class="btn btn-primary btnAdd">Add to Chart</a>
     </div>
   `;
 
@@ -117,7 +117,6 @@ const offcanvasInstance = new bootstrap.Offcanvas(offcanvasElement);
 
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();
-  console.log("qq");
   if (username.value === "UMUT" && pass.value === "1907") {
     offcanvasInstance.hide();
     container.classList.remove("opacity-0");
@@ -127,4 +126,12 @@ loginButton.addEventListener("click", (event) => {
   } else {
     alert("Invalid username or password");
   }
+});
+
+//! ADD TO CART
+
+const btnAdd = document.querySelector(".btnAdd");
+
+btnAdd.addEventListener("click", () => {
+  cart.classList.add("cart::after");
 });
