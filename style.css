@@ -17,6 +17,7 @@ body {
 .login-nav {
   padding: 2rem 2rem;
   background-color: #c6c6c6;
+  height: 12vh;
 }
 
 .login-container {
@@ -46,9 +47,17 @@ body {
 
 /* ! HOMEPAGE **/
 
-.hp-img {
-  width: 100%;
-  height: 87.1vh;
+.homepage {
+  background-image: url(./img/img-main.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   object-fit: cover;
+  height: 88vh;
+
   filter: contrast(0.5);
+}
+
+.hp-img {
 }
