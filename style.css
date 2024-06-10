@@ -12,6 +12,10 @@ body {
   font-style: normal;
 }
 
+.btn:hover {
+  cursor: pointer !important;
+}
+
 /* ! NAVBAR **/
 
 .login-nav {
