@@ -12,6 +12,8 @@ body {
   font-style: normal;
 }
 
+/* ! NAVBAR **/
+
 .login-nav {
   padding: 2rem 2rem;
   background-color: #c6c6c6;
@@ -40,4 +42,13 @@ body {
 
 .offcanvas {
   background-color: #c6c6c6;
+}
+
+/* ! HOMEPAGE **/
+
+.hp-img {
+  width: 100%;
+  height: 87.1vh;
+  object-fit: cover;
+  filter: contrast(0.5);
 }
