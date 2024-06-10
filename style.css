@@ -12,10 +12,6 @@ body {
   font-style: normal;
 }
 
-.btn:hover {
-  cursor: pointer !important;
-}
-
 /* ! NAVBAR **/
 
 .login-nav {
@@ -48,6 +44,18 @@ body {
   background-color: #c6c6c6;
 }
 
+.welcome {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+}
+.cart {
+  margin-left: 2rem;
+}
+
+.cart:hover {
+  cursor: pointer !important;
+  transform: scale(1.2) !important;
+}
 /* ! HOMEPAGE **/
 
 .homepage {

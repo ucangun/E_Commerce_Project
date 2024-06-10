@@ -75,7 +75,7 @@ const products = [
 ];
 
 //! ADD CARDS TO HTML
-
+const container = document.querySelector(".container");
 const row = document.querySelector(".row");
 
 products.forEach((product) => {
@@ -92,4 +92,39 @@ products.forEach((product) => {
   `;
 
   row.appendChild(card);
+});
+
+//! LOGIN FUNCTION
+const login = document.querySelector(".loginLast");
+const username = document.getElementById("inputUsername");
+const pass = document.getElementById("inputPassword");
+/*
+login.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (username.value === "UMUT" && pass.value == "1907") {
+    container.classList.remove("opacity-0");
+    container.classList.add("opacity-100");
+  }
+});
+*/
+
+const loginButton = document.querySelector(".loginLast");
+const loginFirstButton = document.querySelector(".loginFirst");
+const welcome = document.querySelector(".welcome");
+const cart = document.querySelector(".cart");
+const offcanvasElement = document.getElementById("staticBackdrop");
+const offcanvasInstance = new bootstrap.Offcanvas(offcanvasElement);
+
+loginButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  console.log("qq");
+  if (username.value === "UMUT" && pass.value === "1907") {
+    offcanvasInstance.hide();
+    container.classList.remove("opacity-0");
+    container.classList.add("opacity-100");
+    loginFirstButton.classList.add("d-none");
+    welcome.classList.remove("d-none");
+  } else {
+    alert("Invalid username or password");
+  }
 });

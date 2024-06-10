@@ -18,8 +18,9 @@
         <img src="./img/logo.png" alt="" class="logo" />
         <p class="login-header">Geist der Straße</p>
         <div class="login-inputs">
+          <p class="d-none welcome">Welcome Umut! <a href="#" class="cart text-decoration-none">🛒</a> </p>
           <button
-            class="btn btn-secondary login-btn"
+            class="btn btn-secondary loginFirst login-btn"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#staticBackdrop"
@@ -44,21 +45,24 @@
               ></button>
             </div>
             <div class="offcanvas-body">
-              <form>
+              <form id="loginForm">
                 <div class="mb-3">
-                  <label for="InputUsername" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="InputUsername" />
+                  <label for="inputUsername" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="inputUsername" />
                 </div>
                 <div class="mb-3">
-                  <label for="InputPassword" class="form-label">Password</label>
+                  <label for=inputPassword" class="form-label">Password</label>
                   <input
                     type="password"
                     class="form-control"
-                    id="InputPassword"
+                    id="inputPassword"
                   />
                 </div>
 
-                <button type="submit" class="btn btn-secondary login-btn">
+                <button
+                  type="button"
+                  class="btn btn-secondary login-btn loginLast"
+                >
                   Login
                 </button>
               </form>
@@ -68,7 +72,7 @@
       </div>
     </nav>
     <main class="homepage">
-      <div class="container p-5">
+      <div class="container p-5 opacity-0">
         <div class="row justify-content-center gap-5 mt-5">
           <!-- <div class="card text-center col-sm-12 col-md-5 col-lg-3 p-0">
             <img src="./img/img-1-min.jpg" class="card-img-top" alt="..." />
