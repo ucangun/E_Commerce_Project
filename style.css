@@ -94,7 +94,27 @@ body {
   object-fit: cover;
 }
 
-/*! ICONS **/
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body a {
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/*! MODAL **/
 
 .product-box {
   display: flex;
