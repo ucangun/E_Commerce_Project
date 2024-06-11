@@ -142,6 +142,10 @@ body {
   color: red;
 }
 
+.trash:hover {
+  cursor: pointer;
+}
+
 .product-total-price {
   font-size: 1.5rem;
   align-self: end;

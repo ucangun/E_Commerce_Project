@@ -192,4 +192,8 @@ document.addEventListener("click", (event) => {
     quantityElement.textContent = currentQuantity;
     totalPriceElement.textContent = `${(currentQuantity * price).toFixed(2)} €`;
   }
+  if (event.target.classList.contains("trash")) {
+    const productBox = event.target.closest(".product-box");
+    productBox.remove();
+  }
 });
