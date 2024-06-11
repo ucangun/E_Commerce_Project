@@ -99,6 +99,7 @@ body {
 .product-box {
   display: flex;
   align-items: center;
+
   gap: 3rem;
   border: 1px solid #000;
   border-radius: 10px;
@@ -125,12 +126,35 @@ body {
   font-size: 1.4rem;
 }
 
+.product-total {
+  display: flex;
+
+  align-items: center;
+}
+.product-total-btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.trash {
+  font-size: 1.4rem;
+  color: red;
+}
+
+.product-total-price {
+  font-size: 1.5rem;
+  align-self: end;
+  justify-self: center;
+  margin: 0 2rem 0 auto;
+}
+
 .product-btn {
   width: 8rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 0.1rem;
+  padding: 0.2rem;
 }
 
 .product-quantity {
@@ -142,7 +166,7 @@ body {
   height: 1.5rem;
   font-size: 1.5rem;
 
-  transition: all 0.2s;
+  transition: all 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;

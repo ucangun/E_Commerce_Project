@@ -98,15 +98,6 @@ products.forEach((product) => {
 const login = document.querySelector(".loginLast");
 const username = document.getElementById("inputUsername");
 const pass = document.getElementById("inputPassword");
-/*
-login.addEventListener("click", (event) => {
-  event.preventDefault();
-  if (username.value === "UMUT" && pass.value == "1907") {
-    container.classList.remove("opacity-0");
-    container.classList.add("opacity-100");
-  }
-});
-*/
 
 const loginButton = document.querySelector(".loginLast");
 const loginFirstButton = document.querySelector(".loginFirst");
@@ -147,49 +138,24 @@ container.addEventListener("click", (event) => {
       productBox.className = "product-box";
       productBox.innerHTML += `
       <div class="product-img">
-      <img src="${product.image_url}" alt="${product.name}">
-    </div>
-    <div class="product-info">
+       <img src="${product.image_url}" alt="${product.name}">
+     </div>
+     <div class="product-info">
       <p class="product-title">${product.name}</p>
       <p class="product-price">${product.price} €</p>
-      <div >
-        <button class="product-btn">
-          <i class="bi bi-dash"></i>
-          <span class="product-quantity">1</span>
-          <i class="bi bi-plus"></i>
-        </button>
+      <div>
+       <button class="product-btn">
+        <i class="bi bi-dash"></i>
+        <span class="product-quantity">1</span>
+        <i class="bi bi-plus"></i>
+       </button>
       </div>
-      `;
+      <div class="product-total-price">
+       ${product.price} €
+      </div>
+
+    `;
       modalBody.appendChild(productBox);
     }
   });
 });
-
-/*
-btnAdd.addEventListener("click", () => {
-  //cart.classList.add("cart::after");
-
-  products.forEach((product) => {
-    const productBox = document.createElement("div");
-    productBox.className = "product-box";
-
-    productBox.innerHTML = `
-    <div class="product-img">
-    <img src="${product.image_url}" alt="${product.name}">
-  </div>
-  <div class="product-info">
-    <p class="product-title">${product.name}</p>
-    <p class="product-price">${product.price} €</p>
-    <div >
-      <button class="product-btn">
-        <i class="bi bi-dash"></i>
-        <span class="product-quantity">1</span>
-        <i class="bi bi-plus"></i>
-      </button>
-    </div>
-    `;
-
-    modalBody.appendChild(productBox);
-  });
-});
-*/
