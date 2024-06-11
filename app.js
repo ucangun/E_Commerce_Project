@@ -143,19 +143,53 @@ container.addEventListener("click", (event) => {
      <div class="product-info">
       <p class="product-title">${product.name}</p>
       <p class="product-price">${product.price} €</p>
-      <div>
-       <button class="product-btn">
-        <i class="bi bi-dash"></i>
+      <div class="product-total">
+       <div class="product-total-btn">
+        <button class="product-btn">
+        <i class="bi bi-dash minus"></i>
         <span class="product-quantity">1</span>
-        <i class="bi bi-plus"></i>
-       </button>
+        <i class="bi bi-plus plus"></i>
+        </button>
+        <i class="bi bi-trash trash"></i>
+        </div>
+        </div>
       </div>
       <div class="product-total-price">
-       ${product.price} €
+       <p> ${product.price} € </p>
       </div>
 
     `;
       modalBody.appendChild(productBox);
     }
   });
+});
+
+//! MINUS , PLUS FUNCTION
+
+document.addEventListener("click", (event) => {
+  if (
+    event.target.classList.contains("minus") ||
+    event.target.classList.contains("plus")
+  ) {
+    const productBox = event.target.closest(".product-box");
+    const quantityElement = productBox.querySelector(".product-quantity");
+    const priceElement = productBox.querySelector(".product-price");
+    const totalPriceElement = productBox.querySelector(
+      ".product-total-price p"
+    );
+    const price = parseFloat(priceElement.textContent.replace("$", ""));
+
+    let currentQuantity = parseInt(quantityElement.textContent);
+
+    if (event.target.classList.contains("minus") && currentQuantity > 1) {
+      currentQuantity--;
+    }
+
+    if (event.target.classList.contains("plus")) {
+      currentQuantity++;
+    }
+
+    quantityElement.textContent = currentQuantity;
+    totalPriceElement.textContent = `${(currentQuantity * price).toFixed(2)} €`;
+  }
 });
