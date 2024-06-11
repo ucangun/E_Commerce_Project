@@ -25,6 +25,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   width: 6rem;
   height: 6rem;
@@ -34,6 +35,7 @@ body {
 
 .login-header {
   font-size: 3rem;
+  margin-top: 1rem;
 }
 
 .login-btn {
@@ -47,21 +49,21 @@ body {
 
 .welcome {
   font-size: 1.8rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 .cart {
-  margin-left: 2rem;
+  margin-left: 1rem;
   position: relative;
 }
 
-.cart::after {
+/* .cart::after {
   content: "⬆️";
   font-size: 1.2rem;
   position: absolute;
   top: 3rem;
   left: 0.2rem;
   animation: upDown 1s infinite alternate;
-}
+} */
 
 @keyframes upDown {
   0% {
@@ -99,7 +101,7 @@ body {
   flex-direction: column;
 }
 
-.card-body a {
+.card-body button {
   font-size: 1.2rem;
   align-self: center;
 }
@@ -148,9 +150,9 @@ body {
 
 .product-total {
   display: flex;
-
   align-items: center;
 }
+
 .product-total-btn {
   display: flex;
   align-items: center;
@@ -200,4 +202,80 @@ body {
 .product-btn i:active {
   background-color: #0d6efd;
   border-radius: 50%;
+}
+
+.modal-footer p {
+  margin-right: auto;
+  font-size: 1.2rem;
+}
+
+/*! RESPONSIVE **/
+
+@media (max-width: 992px) {
+  .login-header {
+    font-size: 2.8rem;
+  }
+  .product-box {
+    gap: 2rem;
+  }
+  .product-title {
+    font-size: 1.4rem;
+  }
+
+  .product-price {
+    font-size: 1.3rem;
+  }
+
+  .product-total-price {
+    font-size: 1.3rem;
+  }
+  .trash {
+    font-size: 1.3rem;
+  }
+
+  .product-btn {
+    width: 6rem;
+  }
+
+  .product-quantity {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-header {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .login-header {
+    display: none;
+  }
+  .login-btn {
+    width: 7rem;
+    font-size: 1.1rem;
+  }
+  .welcome {
+    font-size: 1.6rem;
+    margin-right: 0.1rem;
+  }
+  .cart {
+    margin-left: 0.5rem;
+  }
+
+  .product-btn {
+    width: 5rem;
+  }
+  .product-total-price {
+    font-size: 1.2rem;
+  }
+  .trash {
+    font-size: 1.2rem;
+  }
 }

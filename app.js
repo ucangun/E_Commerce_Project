@@ -76,7 +76,7 @@ const products = [
 
 //! ADD CARDS TO HTML
 const container = document.querySelector(".container");
-const row = document.querySelector(".row");
+const hpRow = document.querySelector(".hp-row");
 
 products.forEach((product) => {
   const card = document.createElement("div");
@@ -87,11 +87,11 @@ products.forEach((product) => {
     <div class="card-body">
       <h5 class="card-title">${product.name}</h5>
       <p class="card-text">${product.description}</p>
-      <a href="#" class="btn btn-primary btnAdd" id="${product.id}">Add to Cart</a>
+      <button href="#" type="button" class="btn btn-primary btnAdd" id="${product.id}">Add to Cart</button>
     </div>
   `;
 
-  row.appendChild(card);
+  hpRow.appendChild(card);
 });
 
 //! LOGIN FUNCTION
@@ -101,6 +101,7 @@ const pass = document.getElementById("inputPassword");
 
 const loginButton = document.querySelector(".loginLast");
 const loginFirstButton = document.querySelector(".loginFirst");
+const loginHeader = document.querySelector(".login-header");
 const welcome = document.querySelector(".welcome");
 const cart = document.querySelector(".cart");
 const offcanvasElement = document.getElementById("staticBackdrop");
@@ -114,6 +115,7 @@ loginButton.addEventListener("click", (event) => {
     container.classList.add("opacity-100");
     loginFirstButton.classList.add("d-none");
     welcome.classList.remove("d-none");
+    loginHeader.classList.add("d-none");
   } else {
     alert("Invalid username or password");
   }
@@ -164,7 +166,7 @@ container.addEventListener("click", (event) => {
   });
 });
 
-//! MINUS , PLUS FUNCTION
+//! MINUS , PLUS , DELETE FUNCTION
 
 document.addEventListener("click", (event) => {
   if (
@@ -177,6 +179,7 @@ document.addEventListener("click", (event) => {
     const totalPriceElement = productBox.querySelector(
       ".product-total-price p"
     );
+    const lastPrice = document.querySelector(".modal-footer p span");
     const price = parseFloat(priceElement.textContent.replace("$", ""));
 
     let currentQuantity = parseInt(quantityElement.textContent);
