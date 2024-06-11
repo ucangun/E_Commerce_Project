@@ -218,6 +218,11 @@ body {
   .product-box {
     gap: 2rem;
   }
+  .product-img img {
+    width: 8rem;
+    height: 10rem;
+    object-fit: cover;
+  }
   .product-title {
     font-size: 1.4rem;
   }
@@ -268,14 +273,48 @@ body {
   .cart {
     margin-left: 0.5rem;
   }
-
+  .product-img img {
+    width: 8rem;
+    height: 10rem;
+    object-fit: cover;
+  }
   .product-btn {
     width: 5rem;
   }
   .product-total-price {
     font-size: 1.2rem;
+    margin: 0 2rem 0 auto;
   }
   .trash {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 484px) {
+  .welcome {
+    font-size: 1.4rem;
+  }
+
+  .product-box {
+    gap: 1.1rem;
+  }
+  .product-img img {
+    width: 7rem;
+    height: 10rem;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 400px) {
+  .product-img img {
+    width: 6rem;
+    height: 10rem;
+  }
+
+  .product-total-price {
+    font-size: 1rem;
+  }
+  .trash {
+    font-size: 1rem;
   }
 }
