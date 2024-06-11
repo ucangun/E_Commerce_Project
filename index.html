@@ -10,6 +10,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -18,7 +19,49 @@
         <img src="./img/logo.png" alt="" class="logo" />
         <p class="login-header">Geist der Straße</p>
         <div class="login-inputs">
-          <p class="d-none welcome">Welcome Umut! <a href="#" class="cart  cart::after text-decoration-none">🛒</a></p>
+          <!-- Button trigger modal -->
+
+          <p class="d-none welcome">Welcome Umut! <a href="#" class="cart  cart::after text-decoration-none" data-bs-toggle="modal" data-bs-target="#exampleModal">🛒</a></p>
+
+
+           <!-- Modal -->
+         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+           <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-3 my-1" id="exampleModalLabel">My Cart 🛒</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <!--  -->
+              <div class="product-box">
+
+                <!-- <div class="product-img">
+                  <img src="./img/img-1-min.jpg" alt="">
+                </div>
+                <div class="product-info">
+                  <p class="product-title">A</p>
+                  <p class="product-price">15$</p>
+                  <div >
+                    <button class="product-btn">
+                      <i class="bi bi-dash"></i>
+                      <span class="product-quantity" >1</span>
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </div> -->
+
+                </div>
+              </div>
+              <!--  -->
+            </div>
+            <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+           </div>
+          </div>
+          </div>
+
           <button
             class="btn btn-secondary loginFirst login-btn"
             type="button"
