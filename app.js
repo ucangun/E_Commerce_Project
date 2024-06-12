@@ -131,9 +131,20 @@ container.addEventListener("click", (event) => {
 
   products.forEach((product) => {
     if (product.id === +buttonId) {
-      const productBox = document.createElement("div");
-      productBox.className = "product-box";
-      productBox.innerHTML += `
+      let isProductAlreadyAdded = false;
+      const existingProducts = modalBody.querySelectorAll(".product-box");
+      existingProducts.forEach((existingProduct) => {
+        const productTitle =
+          existingProduct.querySelector(".product-title").textContent;
+        if (productTitle === product.name) {
+          isProductAlreadyAdded = true;
+        }
+      });
+
+      if (!isProductAlreadyAdded) {
+        const productBox = document.createElement("div");
+        productBox.className = "product-box";
+        productBox.innerHTML += `
       <div class="product-img">
        <img src="${product.image_url}" alt="${product.name}">
      </div>
@@ -156,8 +167,9 @@ container.addEventListener("click", (event) => {
       </div>
 
     `;
-      modalBody.appendChild(productBox);
-      calcLastPrice();
+        modalBody.appendChild(productBox);
+        calcLastPrice();
+      }
     }
   });
 });
