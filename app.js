@@ -195,4 +195,23 @@ const calcTotalPrice = (btn) => {
   let totalPrice = productBox.querySelector(".product-total-price p");
 
   totalPrice.textContent = (productPrice * productQuantity).toFixed(2);
+
+  calcLastPrice();
+};
+
+//! CALC LAST PRICE
+
+const lastPrice = document.querySelector(".last-price");
+
+const calcLastPrice = () => {
+  const modalBody = document.querySelector(".modal-body");
+  console.log(modalBody);
+  const totalPrices = modalBody.querySelectorAll(".product-total-price p");
+  console.log(totalPrices);
+
+  const lastPrices = [...totalPrices];
+  let sumAll = lastPrices
+    .reduce((sum, price) => sum + Number(price.textContent), 0)
+    .toFixed(2);
+  lastPrice.textContent = `Total Price : ${sumAll}`;
 };
