@@ -144,7 +144,7 @@ container.addEventListener("click", (event) => {
      </div>
      <div class="product-info">
       <p class="product-title">${product.name}</p>
-      <p class="product-price">${product.price}</p>
+      <p class="product-price">${product.price} </p>
       <div class="product-total">
        <div class="product-total-btn">
         <button class="product-btn">
@@ -157,11 +157,12 @@ container.addEventListener("click", (event) => {
         </div>
       </div>
       <div class="product-total-price">
-       <p> ${product.price}  </p>
+       <p> ${product.price} </p>
       </div>
 
     `;
       modalBody.appendChild(productBox);
+      calcLastPrice();
     }
   });
 });
@@ -179,6 +180,7 @@ document.addEventListener("click", (e) => {
   } else if (e.target.classList.contains("trash")) {
     const productBox = e.target.closest(".product-box");
     productBox.remove();
+    calcLastPrice();
   }
 });
 
@@ -205,13 +207,15 @@ const lastPrice = document.querySelector(".last-price");
 
 const calcLastPrice = () => {
   const modalBody = document.querySelector(".modal-body");
-  console.log(modalBody);
   const totalPrices = modalBody.querySelectorAll(".product-total-price p");
-  console.log(totalPrices);
 
   const lastPrices = [...totalPrices];
   let sumAll = lastPrices
     .reduce((sum, price) => sum + Number(price.textContent), 0)
     .toFixed(2);
-  lastPrice.textContent = `Total Price : ${sumAll}`;
+  lastPrice.textContent = `Total Price : ${sumAll} `;
 };
+
+window.addEventListener("load", () => {
+  calcLastPrice();
+});

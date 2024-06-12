@@ -148,6 +148,10 @@ body {
   font-size: 1.4rem;
 }
 
+.product-price::after {
+  content: "€";
+}
+
 .product-total {
   display: flex;
   align-items: center;
@@ -173,6 +177,14 @@ body {
   align-self: end;
   justify-self: center;
   margin: 0 2rem 0 auto;
+  position: relative;
+}
+
+.product-total-price::after {
+  content: "€";
+  position: absolute;
+  top: 0;
+  right: -0.7rem;
 }
 
 .product-btn {
@@ -206,7 +218,11 @@ body {
 
 .modal-footer p {
   margin-right: auto;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.modal-footer p::after {
+  content: "€";
 }
 
 /*! RESPONSIVE **/
@@ -286,6 +302,10 @@ body {
     margin: 0 2rem 0 auto;
   }
   .trash {
+    font-size: 1.2rem;
+  }
+  .modal-footer p {
+    margin-right: auto;
     font-size: 1.2rem;
   }
 }
