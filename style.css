@@ -18,6 +18,10 @@ body {
 .login-nav {
   padding: 2rem 2rem;
   background-color: #c6c6c6;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
 }
 
 .login-container {
@@ -82,12 +86,16 @@ body {
 .homepage {
   background-image: url(./img/img-main.jpg);
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
 
   filter: contrast(0.8);
+}
+
+.container {
+  margin-top: 5rem;
 }
 
 .container img {
@@ -264,6 +272,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  .homepage {
+    background-image: url(./img/img-main2.jpg);
+    background-position: center;
+  }
+
   .login-header {
     font-size: 2.5rem;
   }
