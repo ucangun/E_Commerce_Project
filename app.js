@@ -144,7 +144,7 @@ container.addEventListener("click", (event) => {
      </div>
      <div class="product-info">
       <p class="product-title">${product.name}</p>
-      <p class="product-price">${product.price} €</p>
+      <p class="product-price">${product.price}</p>
       <div class="product-total">
        <div class="product-total-btn">
         <button class="product-btn">
@@ -157,7 +157,7 @@ container.addEventListener("click", (event) => {
         </div>
       </div>
       <div class="product-total-price">
-       <p> ${product.price} € </p>
+       <p> ${product.price}  </p>
       </div>
 
     `;
@@ -168,35 +168,31 @@ container.addEventListener("click", (event) => {
 
 //! MINUS , PLUS , DELETE FUNCTION
 
-document.addEventListener("click", (event) => {
-  if (
-    event.target.classList.contains("minus") ||
-    event.target.classList.contains("plus")
-  ) {
-    const productBox = event.target.closest(".product-box");
-    const quantityElement = productBox.querySelector(".product-quantity");
-    const priceElement = productBox.querySelector(".product-price");
-    const totalPriceElement = productBox.querySelector(
-      ".product-total-price p"
-    );
-    const lastPrice = document.querySelector(".modal-footer p span");
-    const price = parseFloat(priceElement.textContent.replace("$", ""));
-
-    let currentQuantity = parseInt(quantityElement.textContent);
-
-    if (event.target.classList.contains("minus") && currentQuantity > 1) {
-      currentQuantity--;
-    }
-
-    if (event.target.classList.contains("plus")) {
-      currentQuantity++;
-    }
-
-    quantityElement.textContent = currentQuantity;
-    totalPriceElement.textContent = `${(currentQuantity * price).toFixed(2)} €`;
-  }
-  if (event.target.classList.contains("trash")) {
-    const productBox = event.target.closest(".product-box");
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("minus")) {
+    if (e.target.nextElementSibling.textContent > 1)
+      e.target.nextElementSibling.textContent--;
+    calcTotalPrice(e.target);
+  } else if (e.target.classList.contains("plus")) {
+    e.target.previousElementSibling.textContent++;
+    calcTotalPrice(e.target);
+  } else if (e.target.classList.contains("trash")) {
+    const productBox = e.target.closest(".product-box");
     productBox.remove();
   }
 });
+
+//! CALC TOTAL PRICE
+
+const calcTotalPrice = (btn) => {
+  const productBox = btn.closest(".product-box");
+  const productPrice = parseFloat(
+    productBox.querySelector(".product-price").textContent
+  );
+  const productQuantity = parseInt(
+    productBox.querySelector(".product-quantity").textContent
+  );
+  let totalPrice = productBox.querySelector(".product-total-price p");
+
+  totalPrice.textContent = (productPrice * productQuantity).toFixed(2);
+};
