@@ -104,7 +104,7 @@ const offcanvasInstance = new bootstrap.Offcanvas(offcanvasElement);
 
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();
-  if (username.value === "UMUT" && pass.value === "1907") {
+  if (username.value !== "" && pass.value !== "") {
     offcanvasInstance.hide();
     container.classList.remove("opacity-0");
     container.classList.add("opacity-100");

@@ -82,7 +82,7 @@ body {
 .homepage {
   background-image: url(./img/img-main.jpg);
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-size: cover;
   background-repeat: no-repeat;
   object-fit: cover;
