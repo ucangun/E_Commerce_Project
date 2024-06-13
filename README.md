@@ -25,7 +25,8 @@ The primary objective of this project is to enhance and demonstrate my skills in
 
 ## Outcome
 
-![E-Commerce](https://github.com/ucangun/E_Commerce_Project/assets/149247682/e2e0f7d2-d100-469d-9c90-327cb3bafd03)
+![E-Commerce](https://github.com/ucangun/E_Commerce_Project/assets/149247682/4edfc770-b026-41d4-8ba4-c42e9daa4534)
+
 
 
 ## Technologies Used
